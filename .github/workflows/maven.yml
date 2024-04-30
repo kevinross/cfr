@@ -3,7 +3,7 @@
 
 name: Java CI with Maven
 
-on: [push, pull_request]
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
@@ -27,6 +27,11 @@ jobs:
       name: Build with Maven
       run: mvn --batch-mode --update-snapshots -Dgpg.skip=true clean verify
 
+    - uses: actions/upload-artifacts@v2
+      with:
+        name: builtdist
+        path: target/*.jar
+        
     - name: Upload decompilation test failures artifact
       # Only run when Maven build failed, see https://github.community/t/run-step-only-if-previous-step-failed/127124/3
       if: failure() && steps.maven-build.outcome == 'failure'
