@@ -8,7 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/java-templates" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="inheritedJdk" 
+/>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
